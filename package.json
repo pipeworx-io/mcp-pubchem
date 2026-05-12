@@ -1,0 +1,20 @@
+{
+  "name": "@pipeworx/mcp-pubchem",
+  "version": "0.1.0",
+  "description": "PubChem MCP — NIH chemistry compound database (no auth)",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "pubchem"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pipeworx-io/mcp-pubchem"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0"
+  }
+}
