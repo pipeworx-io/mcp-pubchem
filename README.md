@@ -1,14 +1,19 @@
-# mcp-pubchem
+# @pipeworx/pubchem
 
-PubChem MCP — NIH chemistry compound database (no auth)
+PubChem MCP — NIH chemistry compound database, no auth.
 
-Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 673+ live data sources.
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 1394+ live data sources.
 
 ## Tools
 
-| Tool | Description |
-|------|-------------|
-| `get_synonyms` | List all names (synonyms) for a CID — common names, IUPAC, trade names, CAS numbers, etc. |
+- `search_by_name(name, max_results?)` — name → CIDs.
+- `get_compound(cid)` — formula, MW, SMILES, InChI, properties.
+- `get_synonyms(cid, max_results?)` — all known names.
+- `get_classification(cid)` — pharmacology classification tree.
+
+## Data source
+
+`https://pubchem.ncbi.nlm.nih.gov/rest/pug` (PUG-REST + PUG-VIEW). No key. Be reasonable on RPS (5/sec recommended).
 
 ## Quick Start
 
@@ -24,7 +29,7 @@ Add to your MCP client (Claude Desktop, Cursor, Windsurf, etc.):
 }
 ```
 
-Or connect to the full Pipeworx gateway for access to all 673+ data sources:
+Or connect to the full Pipeworx gateway for access to all 1394+ data sources:
 
 ```json
 {
@@ -48,7 +53,7 @@ The gateway picks the right tool and fills the arguments automatically.
 
 ## More
 
-- [All tools and guides](https://github.com/pipeworx-io/examples)
+- [Docs and guides](https://pipeworx.io/docs)
 - [pipeworx.io](https://pipeworx.io)
 
 ## License
