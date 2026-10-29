@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-pubchem",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "PubChem MCP — NIH chemistry compound database (no auth)",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-pubchem": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "pubchem"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-pubchem.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/pubchem",
   "pipeworx": {
-    "sourceHash": "v1-4c54ebfa9cc887e8708bdc6d80078895d941dfcd070646b83a15cbc1c3712e83",
-    "sourceCommit": "4d51421bd010ad9a322c2245b70b401604912eff"
+    "mode": "gateway",
+    "slug": "pubchem",
+    "gatewaySlug": "pubchem",
+    "sourceHash": "v1-5d2a119ee9677b5832fccd99adc492d2ae2d66f552f94c662986bf8746a6f157",
+    "sourceCommit": "6bae4cfa7b6a73bbe014dc8820a19c80c842b21e"
   }
 }

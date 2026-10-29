@@ -1,0 +1,74 @@
+[
+  {
+    "name": "search_by_name",
+    "description": "Resolve a common chemical or drug name to PubChem CIDs. Use for \"what's the CID of ibuprofen?\" or to disambiguate. Returns CIDs (Compound IDs) matched to the name. Then use get_compound with the CID for properties.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Common, IUPAC, or brand name (e.g., \"ibuprofen\", \"caffeine\")"
+        },
+        "max_results": {
+          "type": "number",
+          "description": "Cap results (default 5)"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    }
+  },
+  {
+    "name": "get_compound",
+    "description": "Get standard properties for a PubChem CID: molecular formula, molecular weight, IUPAC name, canonical SMILES, isomeric SMILES, InChI, InChIKey, exact mass, charge, complexity, H-bond donors/acceptors, rotatable bonds, TPSA, XLogP, heavy atom count.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "cid": {
+          "type": "number",
+          "description": "PubChem Compound ID"
+        }
+      },
+      "required": [
+        "cid"
+      ]
+    }
+  },
+  {
+    "name": "get_synonyms",
+    "description": "List all names (synonyms) for a CID — common names, IUPAC, trade names, CAS numbers, etc.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "cid": {
+          "type": "number",
+          "description": "PubChem Compound ID"
+        },
+        "max_results": {
+          "type": "number",
+          "description": "Cap (default 50)"
+        }
+      },
+      "required": [
+        "cid"
+      ]
+    }
+  },
+  {
+    "name": "get_classification",
+    "description": "Pharmacological classification tree for a CID — drug class, mechanism of action, biological role tags. Useful for \"what kind of drug is X\" questions.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "cid": {
+          "type": "number",
+          "description": "PubChem Compound ID"
+        }
+      },
+      "required": [
+        "cid"
+      ]
+    }
+  }
+]
