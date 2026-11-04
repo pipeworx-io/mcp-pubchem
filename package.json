@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-pubchem",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "PubChem MCP — NIH chemistry compound database (no auth)",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "pubchem",
     "gatewaySlug": "pubchem",
-    "sourceHash": "v1-5d2a119ee9677b5832fccd99adc492d2ae2d66f552f94c662986bf8746a6f157",
-    "sourceCommit": "6bae4cfa7b6a73bbe014dc8820a19c80c842b21e"
+    "sourceHash": "v1-939e77692e607f558ab5a06a5b85f73412e79085e860827325debc159fa81d4d",
+    "sourceCommit": "db27387ed3ef7ec4805d465f7964a7f65f937006"
   }
 }
